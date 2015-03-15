@@ -15,7 +15,6 @@ angular.module('"calorieManagementApp"', ['ionic'])
   });
 })
 
-
 // States Declaration
 .config(function($stateProvider, $urlRouterProvider)
 {
