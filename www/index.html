@@ -1,69 +1,115 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <title>Calorie Management App</title>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+		<title>Calorie Management App</title>
 
-    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+		<link href="lib/ionic/css/ionic.css" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet">
 
-    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
-    <link href="css/ionic.app.css" rel="stylesheet">
-    -->
+		<!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+		<link href="css/ionic.app.css" rel="stylesheet">
+		-->
 
-    <!-- ionic/angularjs js -->
-    <script src="lib/ionic/js/ionic.bundle.js"></script>
+		<!-- ionic/angularjs js -->
+		<script src="lib/ionic/js/ionic.bundle.js"></script>
 
-    <!-- cordova script (this will be a 404 during development) -->
-    <script src="cordova.js"></script>
+		<!-- cordova script (this will be a 404 during development) -->
+		<script src="cordova.js"></script>
 
-    <!-- your app's js -->
-    <script src="js/app.js"></script>
-  </head>
-  <body ng-app="calorieManagementApp">
+		<!-- your app's js -->
+		<script src="js/app.js"></script>
+	</head>
+	<body ng-app="ionic-assignment" ng-controller="MyCtrl" ng-controller="CountCtrl">
 
-    <ion-pane>
-      <ion-header-bar class="bar-stable">
-        <h2 class="title">Calorie Management App</h2>
-      </ion-header-bar>
-      <ion-content>
-      </ion-content>
-    </ion-pane>
+		<ion-nav-view>
+		</ion-nav-view>
 
-    <ion-nav-view>
-    </ion-nav-view>
-
-		<ion-content>
-		<h4>Enter your Name and Gender</h4>
-		<div class="list list-inset">
-			<label class="item item-input">
-				<input type="text" placeholder="First Name">
-			</label>
-			<label class="item item-input">
-				<input type="text" placeholder="Last Name">
-			</label>
-		</div>
-		<br/>
-		<div class="list">
-			<label class="item item-input item-select">
-				<div class="input-label">Gender</div>
-				<select>
-					<option>Male</option>
-					<option>Female</option>
-				</select>
-			</label>
-		</div>
-		</ion-content>
-
-		<ion-view view-title="Home" type="text/ng-template" id="menuState.html">
-                        <ion-content>
-                       		 <button ui-sref="menuState" class="button button-block button-positive">Start</button>
-                        </ion-content>
-                </ion-view>
-	
+		<!-- Menu Page Section -->
+		<script type="text/ng-template" id="menuState.html">
+			<ion-view view-title="Home">
+				<ion-content>
+					<ion-header-bar style="font-size: 40" class="bar-stable">
+						<h1 class="title">Calorie Management App</h1>
+					</ion-header-bar>
+					</br></br></br></br>
+					<h3 style="text-align: center">Enter your Name and Gender</h3>
+					</br>
+					<div class="list list-inset">
+						<label class="item item-input">
+							<input type="text" placeholder="First Name">
+						</label>
+						<label class="item item-input">
+							<input type="text" placeholder="Last Name">
+						</label>
+					</div>
+					<br/>
+					<div class="list">
+						<label class="item item-input item-select">
+							<div class="input-label">Gender</div>
+							<select>
+								<option>Male</option>
+								<option>Female</option>
+							</select>
+						</label>
+					</div>
+					<button ui-sref="listState" class="button button-block button-positive">Start</button>
+				</ion-content>
+			</ion-view>
+		</script>
 		
-  </body>
+		<!-- List Page Section -->
+		<script type="text/ng-template" id="listState.html">
+			<ion-view view-title="List">
+				<ion-content>
+					<h2 style="text-align: center">Daily Calories</h2>	
+						<div class="list">
+							<a class="item item-thumbnail-left">
+								<img src="images/fish.png">
+								<h2>Fish</h2>
+								<br/>
+								<button ng-click="countFish = countFish + 1">+</button>
+								<button ng-click="countFish = countFish - 1">-</button>
+								<input style="border: solid blue 1px; width: 50px; text-align: right" type="number" ng-model="countFish" />
+							</a>
+						</div>
+						<div class="list">
+							<a class="item item-thumbnail-left">
+								<img src="images/meat.png">
+								<h2>Meat</h2>
+								<br/>
+								<button ng-click="countMeat = countMeat + 1">+</button>
+								<button ng-click="countMeat = countMeat - 1">-</button>
+								<input style="border: solid blue 1px; width: 50px; text-align: right" type="number" ng-model="countMeat" />
+							</a>
+						</div>
+						<div class="list">
+							<a class="item item-thumbnail-left">
+								<img src="images/poultry.png">
+								<h2>Poultry</h2>
+								<br/>
+								<button ng-click="countPoultry = countPoultry + 1">+</button>
+								<button ng-click="countPoultry = countPoultry - 1">-</button>
+								<input style="border: solid blue 1px; width: 50px; text-align: right" type="number" ng-model="countPoultry" />
+							</a>
+						</div>
+						<div class="list">
+							<a class="item item-thumbnail-left">
+								<img src="images/fruitAndVeg.png">
+								<h2>Fruit & Veg</h2>
+								<br/>
+								<button ng-click="countFruitAndVeg = countFruitAndVeg + 1">+</button>
+								<button ng-click="countFruitAndVeg = countFruitAndVeg - 1">-</button>
+								<input style="border: solid blue 1px; width: 50px; text-align: right" type="number" ng-model="countFruitAndVeg" />
+							</a>
+						</div>
+					<button ui-sref="menuState" class="button button-positive">Back</button>
+				</ion-content>
+			</ion-view>
+		</script>
+	</body>
 </html>
+
 
 

@@ -1,41 +1,73 @@
-angular.module('"calorieManagementApp"', ['ionic'])
+angular.module('ionic-assignment', ['ionic'])
 
-.run(function($ionicPlatform)
+.config(function($stateProvider, $urlRouterProvider) 
 {
-  $ionicPlatform.ready(function()
+	// Declaration & Definition of States
+	$urlRouterProvider.otherwise('/');
+	$stateProvider
+
+	.state('menuState', 
+	{
+	  url: '/',
+	  templateUrl: 'menuState.html'
+	})
+
+	.state('listState', 
+	{
+	  url: '/listState',
+	  templateUrl: 'listState.html'
+	});
+	
+}) // End of Declaration & Definition of States
+
+
+
+.controller("CountCtrl", function($scope) 
 {
-    // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-    // for form inputs)
-    if(window.cordova && window.cordova.plugins.Keyboard) {
-      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-    }
-    if(window.StatusBar) {
-      StatusBar.styleDefault();
-    }
-  });
+	$scope.countMeat = 0;
+	$scope.countFish = 0;
+	$scope.countFruitAndVeg = 0;
+	$scope.countPoultry = 0;
 })
-
-// States Declaration
-.config(function($stateProvider, $urlRouterProvider)
+		
+		
+		
+.controller('MyCtrl', function($scope) 
 {
-        $urlRouterProvider.otherwise('/');
-
-        // List of States
-        $stateProvider
-
-        .state('menuState',
-        {
-          url: '/',
-          templateUrl: 'menuState.html'
-        })
-
-        .state('nextState',
-        {
-          url: '/nextState',
-		  templateUrl: 'nextState.html'
-        });
-
-}) // End of States Declaration
-
-
-                                                                
+  
+  $scope.data = 
+  {
+    showDelete: false
+  };
+  
+  $scope.edit = function(item) {
+    alert('Edit Item: ' + item.id);
+  };
+  $scope.share = function(item) {
+    alert('Share Item: ' + item.id);
+  };
+  
+  $scope.moveItem = function(item, fromIndex, toIndex) {
+    $scope.items.splice(fromIndex, 1);
+    $scope.items.splice(toIndex, 0, item);
+  };
+  
+  $scope.onItemDelete = function(item) {
+    $scope.items.splice($scope.items.indexOf(item), 1);
+  };
+  
+  $scope.items = 
+  [
+    { id: 0 },
+    { id: 1 },
+    { id: 2 },
+    { id: 3 },
+    { id: 4 },
+    { id: 5 },
+    { id: 6 },
+    { id: 7 },
+    { id: 8 },
+    { id: 9 },
+    { id: 10 }
+  ];
+})
