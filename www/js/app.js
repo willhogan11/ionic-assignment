@@ -16,6 +16,12 @@ angular.module('ionic-assignment', ['ionic'])
 	{
 	  url: '/listState',
 	  templateUrl: 'listState.html'
+	})
+	
+	.state('summaryState',
+	{
+		url: '/summaryState',
+		templateUrl: 'summaryState.html'
 	});
 	
 }) // End of Declaration & Definition of States
@@ -24,13 +30,22 @@ angular.module('ionic-assignment', ['ionic'])
 
 .controller("CountCtrl", function($scope) 
 {
-	$scope.countMeat = 0;
-	$scope.countFish = 0;
-	$scope.countFruitAndVeg = 0;
-	$scope.countPoultry = 0;
+	$scope.countCod = 0;
+	$scope.countSalmon = 0;
+	$scope.countPlaice = 0
+	$scope.countSausages = 0;
+	$scope.countSteak = 0;
+	$scope.countLamb = 0;
+	$scope.countApple = 0;
+	$scope.countOrange = 0;
+	$scope.countBanana = 0;
+	$scope.countCarrot = 0;
+	$scope.countParsnip = 0;
+	$scope.countCelery = 0;
+	$scope.countTotalCals = 0;
 })
-		
-		
+
+
 		
 .controller('MyCtrl', function($scope) 
 {
@@ -71,3 +86,13 @@ angular.module('ionic-assignment', ['ionic'])
     { id: 10 }
   ];
 })
+
+
+
+function getVal()
+{
+	var val, text;
+	val = document.getElementById("num").value;
+	// document.getElementById("result").innerHTML = text;
+	document.write("\nThe Calorie total is: " + val);
+}
