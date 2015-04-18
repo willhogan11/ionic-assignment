@@ -21,8 +21,12 @@
 		<!-- your app's js -->
 		<script src="js/app.js"></script>
 	</head>
+<<<<<<< HEAD
 	
 	<body style="background: url("images/healthyFoodImage.jpg")" ng-app="ionic-assignment" ng-controller="countCtrl">
+=======
+	<body ng-app="ionic-assignment" ng-controller="MyCtrl" ng-controller="CountCtrl">
+>>>>>>> 7f4c8b8b66979d6a29aaa3e0ff0553799207e231
 
 		<ion-nav-view>
 		</ion-nav-view>
@@ -35,7 +39,11 @@
 						<h1 class="title">Calorie Management App</h1>
 					</ion-header-bar>
 					</br></br></br></br>
+<<<<<<< HEAD
 					<h4 style="text-align: center">Enter your Name and Gender</h4>
+=======
+					<h3 style="text-align: center">Enter your Name and Gender</h3>
+>>>>>>> 7f4c8b8b66979d6a29aaa3e0ff0553799207e231
 					</br>
 					<div class="list list-inset">
 						<label class="item item-input">
@@ -81,7 +89,11 @@
 								<button ng-click="countCod = countCod - 1; countCodCals = countCodCals - 82">-</button>
 								<input style="border: solid blue 1px; width: 50px; text-align: right" type="number" ng-model="countCod" />
 								<label>Calorie Total per Item:	
+<<<<<<< HEAD
 									<input placeholder ="0" style="border: solid blue 1px; width: 50px; text-align: right" type="number" ng-model="countCodCals" />
+=======
+									<input style="border: solid blue 1px; width: 50px; text-align: right" type="number" ng-model="countCodCals" />
+>>>>>>> 7f4c8b8b66979d6a29aaa3e0ff0553799207e231
 								</label>
 							<li>
 							<li class="item">Salmon(Per Piece)
@@ -90,7 +102,11 @@
 								<button ng-click="countSalmon = countSalmon - 1; countSalmonCals = countSalmonCals - 208">-</button>
 								<input style="border: solid blue 1px; width: 50px; text-align: right" type="number" ng-model="countSalmon" />
 								<label>Calorie Total per Item:	
+<<<<<<< HEAD
 									<input placeholder ="0" style="border: solid blue 1px; width: 50px; text-align: right" type="number" ng-model="countSalmonCals"/>
+=======
+									<input style="border: solid blue 1px; width: 50px; text-align: right" type="number" ng-model="countSalmonCals"/>
+>>>>>>> 7f4c8b8b66979d6a29aaa3e0ff0553799207e231
 								</label>
 							<li>
 							<li class="item">Plaice (Per Piece)
@@ -99,12 +115,25 @@
 								<button ng-click="countPlaice = countPlaice - 1; countPlaiceCals = countPlaiceCals - 149">-</button>
 								<input style="border: solid blue 1px; width: 50px; text-align: right" type="number" ng-model="countPlaice" />
 								<label>Calorie Total per Item:	
+<<<<<<< HEAD
 									<input placeholder ="0" style="border: solid blue 1px; width: 50px; text-align: right" type="number" ng-model="countPlaiceCals"/>
+=======
+									<input style="border: solid blue 1px; width: 50px; text-align: right" type="number" ng-model="countPlaiceCals"/>
+>>>>>>> 7f4c8b8b66979d6a29aaa3e0ff0553799207e231
 								</label>
 							<li>
 						</ul>
 						<!-- End Fish -->
 						
+<<<<<<< HEAD
+=======
+						<h3 style="text-align: center">Today's Calorie Count</h3>
+						<h4 style="text-align: center; border: solid blue 5px; border-radius: 50px">{{countCodCals + countSalmonCals + countPlaiceCals}}</h4>
+						<input id="num" type="number">50</input>
+						<button type="button" onClick="getVal()">Submit</button>
+						<p id="result"></p>
+						
+>>>>>>> 7f4c8b8b66979d6a29aaa3e0ff0553799207e231
 						<!-- Meat -->
 						<div class="list">
 							<a class="item item-thumbnail-center">
@@ -115,6 +144,7 @@
 						<ul class="list">
 							<li class="item">Lamb (Per Piece)
 								<br/>
+<<<<<<< HEAD
 								<button ng-click="countLamb = countLamb + 1; countLambCals = countLambCals + 249">+</button>
 								<button ng-click="countLamb = countLamb - 1; countLambCals = countLambCals - 249">-</button>
 								<input style="border: solid blue 1px; width: 50px; text-align: right" type="number" ng-model="countLamb" />
@@ -182,6 +212,27 @@
 						</ul>
 						<!-- End Poultry -->
 						
+=======
+								<button ng-click="countLamb = countLamb + 1">+</button>
+								<button ng-click="countLamb = countLamb - 1">-</button>
+								<input style="border: solid blue 1px; width: 50px; text-align: right" type="number" ng-model="countLamb" />
+							<li>
+							<li class="item">Sirloin Steak(Per Piece)
+								<br/>
+								<button ng-click="countSteak = countSteak + 1">+</button>
+								<button ng-click="countSteak = countSteak - 1">-</button>
+								<input style="border: solid blue 1px; width: 50px; text-align: right" type="number" ng-model="countSteak" />
+							<li>
+							<li class="item">Sausages(Single)
+								<br/>
+								<button ng-click="countSausages = countSausages + 1">+</button>
+								<button ng-click="countSausages = countSausages - 1">-</button>
+								<input style="border: solid blue 1px; width: 50px; text-align: right" type="number" ng-model="countSausages" />
+							<li>
+						</ul>
+						
+						<!-- End Meat -->
+>>>>>>> 7f4c8b8b66979d6a29aaa3e0ff0553799207e231
 							
 						<!-- Fruit & Veg -->
 						<div class="list">
@@ -193,6 +244,7 @@
 						<ul class="list">
 							<li class="item">Apple
 								<br/>
+<<<<<<< HEAD
 								<button ng-click="countApple = countApple + 1; countAppleCals = countAppleCals + 52">+</button>
 								<button ng-click="countApple = countApple - 1; countAppleCals = countAppleCals - 52">-</button>
 								<input style="border: solid blue 1px; width: 50px; text-align: right" type="number" ng-model="countApple" />
@@ -244,6 +296,41 @@
 								<label>Calorie Total per Item:	
 									<input placeholder ="0" style="border: solid blue 1px; width: 50px; text-align: right" type="number" ng-model="countCeleryCals"/>
 								</label>
+=======
+								<button ng-click="countApple = countApple + 1">+</button>
+								<button ng-click="countApple = countApple - 1">-</button>
+								<input style="border: solid blue 1px; width: 50px; text-align: right" type="number" ng-model="countApple" />
+							<li>
+							<li class="item">Orange
+								<br/>
+								<button ng-click="countOrange = countOrange + 1">+</button>
+								<button ng-click="countOrange = countOrange - 1">-</button>
+								<input style="border: solid blue 1px; width: 50px; text-align: right" type="number" ng-model="countOrange" />
+							<li>
+							<li class="item">Banana
+								<br/>
+								<button ng-click="countBanana = countBanana + 1">+</button>
+								<button ng-click="countBanana = countBanana - 1">-</button>
+								<input style="border: solid blue 1px; width: 50px; text-align: right" type="number" ng-model="countBanana" />
+							<li>
+							<li class="item">Carrot
+								<br/>
+								<button ng-click="countCarrot = countCarrot + 1">+</button>
+								<button ng-click="countCarrot = countCarrot - 1">-</button>
+								<input style="border: solid blue 1px; width: 50px; text-align: right" type="number" ng-model="countCarrot" />
+							<li>
+							<li class="item">Parsnip
+								<br/>
+								<button ng-click="countParsnip = countParsnip + 1">+</button>
+								<button ng-click="countParsnip = countParsnip - 1">-</button>
+								<input style="border: solid blue 1px; width: 50px; text-align: right" type="number" ng-model="countParsnip" />
+							<li>
+							<li class="item">Celery (Stick)
+								<br/>
+								<button ng-click="countCelery = countCelery + 1">+</button>
+								<button ng-click="countCelery = countCelery - 1">-</button>
+								<input style="border: solid blue 1px; width: 50px; text-align: right" type="number" ng-model="countCelery" />
+>>>>>>> 7f4c8b8b66979d6a29aaa3e0ff0553799207e231
 							<li>
 						</ul>
 						<!-- End Fruit & Veg -->
@@ -256,6 +343,7 @@
 							</a>
 						</div>
 						<ul class="list">
+<<<<<<< HEAD
 							<li class="item">Brown Rice(Per 100g)
 								<br/>
 								<button ng-click="countBrownRice = countBrownRice + 1; countBrownRiceCals = countBrownRiceCals + 111">+</button>
@@ -300,17 +388,35 @@
 								<label>Calorie Total per Item:	
 									<input placeholder ="0" style="border: solid blue 1px; width: 50px; text-align: right" type="number" ng-model="countPotatoesCals"/>
 								</label>
+=======
+							<li class="item">Rice(Per Cup)
+								<br/>
+								<button ng-click="countRice = countRice + 1">+</button>
+								<button ng-click="countRice = countRice - 1">-</button>
+								<input style="border: solid blue 1px; width: 50px; text-align: right" type="number" ng-model="countRice" />
+>>>>>>> 7f4c8b8b66979d6a29aaa3e0ff0553799207e231
 							<li>
 						</ul>
 						<!-- End Potatoes, Rice etc -->
 						
 						<h3 style="text-align: center">Today's Calorie Count</h3>
+<<<<<<< HEAD
 							<h4 style="text-align: center; border: solid blue 5px; border-radius: 50px">
 								{{countCodCals + countSalmonCals + countPlaiceCals + countLambCals + countSteakCals + countSausagesCals +     countAppleCals + countOrangeCals + countBananaCals + countCarrotCals + countParnsipCals + countCeleryCals + countchickenCals + countDuckCals + countTurkeyCals + countBrownRiceCals + countWhiteRiceCals + countWhitePastaCals + countBrownPastaCals + countPotatoesCals}}
 							</h4>
 						<br/>
 					<a ui-sref="menuState" class="button icon icon-left ion-chevron-left">Back</a>
 					<a ui-sref="summaryState" style="float:right" class="button icon icon-right ion-chevron-right">Summary</a>
+=======
+						<h4 style="text-align: center; border: solid blue 5px; border-radius: 50px">{{countCodCals + countSalmonCals + countPlaiceCals}}</h4>
+						<br/>
+						<input id="num" type="number">{{countCodCals + countSalmonCals + countPlaiceCals}}</input>
+						<button type="button" onClick="getVal()">Submit</button>
+						
+					<br/>
+					<a ui-sref="menuState" class="button icon-left ion-chevron-left button-clear button-dark">Back</a>
+					<a ui-sref="summaryState" style="float:right" class="button icon-right ion-chevron-right button-clear button-dark">Summary</a>
+>>>>>>> 7f4c8b8b66979d6a29aaa3e0ff0553799207e231
 				</ion-content>
 			</ion-view>
 		</script>
@@ -320,15 +426,27 @@
 			<ion-view view-title="Summary Page">
 				<ion-content>
 					<h1 style="text-align: center">Calorie Summary</h1>
+<<<<<<< HEAD
 					{{ countCodCals + countSalmonCals + countPlaiceCals + countLambCals }}
 						<h4 style="text-align: center; border: solid blue 5px; border-radius: 50px">
 							{{ countCodCals + countSalmonCals + countPlaiceCals + countLambCals }}
 						</h4>
 					<a ui-sref="menuState" class="button icon ion-home">Home</a>
+=======
+					<h4 style="text-align: center; border: solid blue 5px; border-radius: 50px">{{countCodCals + countSalmonCals + countPlaiceCals}}</h4>
+					<a ui-sref="menuState" class="button icon-left ion-chevron-left button-clear button-dark">Menu</a>
+>>>>>>> 7f4c8b8b66979d6a29aaa3e0ff0553799207e231
 				</ion-content>
 			</ion-view>
 		</script>
 		<!-- End Summary Page -->	
 		
 	</body>
+<<<<<<< HEAD
 </html>
+=======
+</html>
+
+
+
+>>>>>>> 7f4c8b8b66979d6a29aaa3e0ff0553799207e231
