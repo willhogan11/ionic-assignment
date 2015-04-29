@@ -3,36 +3,67 @@ angular.module('ionic-assignment', ['ionic'])
 .config(function($stateProvider, $urlRouterProvider) 
 {
 	// Declaration & Definition of States
-	$urlRouterProvider.otherwise('/');
+	
+	// Defaults to this State, the 'menuState'
+	$urlRouterProvider.otherwise('/menuState');
+	
 	$stateProvider
 
+	// menuState
 	.state('menuState', 
 	{
-	  url: '/',
-	  templateUrl: 'menuState.html'
+		url: '/menuState',
+		templateUrl: 'menuState.html',
+		controller: 'userDetails'
 	})
+	// End menuState
 
 	.state('listState', 
 	{
-	  url: '/listState',
-	  templateUrl: 'listState.html'
+		url: '/listState',
+		// parent: 'menuState',
+		templateUrl: 'listState.html'
 	})
 	
 	.state('summaryState',
 	{
 		url: '/summaryState',
+		// parent: 'menuState',
 		templateUrl: 'summaryState.html'
 	});
+	
+	// $urlRouterProvider.otherwise('/menuState');
 	
 }) // End of Declaration & Definition of States
 
 
-<<<<<<< HEAD
-.controller("countCtrl", function($scope) 
-=======
+.controller('userDetails', function($scope) 
+{
+    $scope.firstName= "";
+    $scope.lastName= "";
+    $scope.items = 
+	[
+		{ Id: "Male", Name: "Male" },
+		{ Id: "Female", Name: "Female" }
+	];
+})
 
-.controller("CountCtrl", function($scope) 
->>>>>>> 7f4c8b8b66979d6a29aaa3e0ff0553799207e231
+// .controller('userDetails', function ($scope) 
+// {
+	// $scope.items = $scope.items
+		// {Name : ""};
+// })
+
+
+.run(['$rootScope', '$state', '$stateParams',
+  function ($rootScope, $state, $stateParams) 
+  {
+	  $rootScope.$state = $state;
+	  $rootScope.$stateParams = $stateParams;
+  }
+])
+
+.controller("countCtrl", function($scope) 
 {
 	$scope.countCod = 0;
 	$scope.countSalmon = 0;
@@ -46,7 +77,6 @@ angular.module('ionic-assignment', ['ionic'])
 	$scope.countCarrot = 0;
 	$scope.countParsnip = 0;
 	$scope.countCelery = 0;
-<<<<<<< HEAD
 	$scope.countLamb = 0;
 	$scope.countSteak = 0;
 	$scope.countSausages = 0; 
@@ -64,53 +94,7 @@ angular.module('ionic-assignment', ['ionic'])
 	$scope.countWhitePasta = 0; 
 	$scope.countBrownPasta = 0; 
 	$scope.countPotatoes = 0; 
-=======
-	$scope.countTotalCals = 0;
->>>>>>> 7f4c8b8b66979d6a29aaa3e0ff0553799207e231
 })
-
-
-		
-.controller('MyCtrl', function($scope) 
-{
-  
-  $scope.data = 
-  {
-    showDelete: false
-  };
-  
-  $scope.edit = function(item) {
-    alert('Edit Item: ' + item.id);
-  };
-  $scope.share = function(item) {
-    alert('Share Item: ' + item.id);
-  };
-  
-  $scope.moveItem = function(item, fromIndex, toIndex) {
-    $scope.items.splice(fromIndex, 1);
-    $scope.items.splice(toIndex, 0, item);
-  };
-  
-  $scope.onItemDelete = function(item) {
-    $scope.items.splice($scope.items.indexOf(item), 1);
-  };
-  
-  $scope.items = 
-  [
-    { id: 0 },
-    { id: 1 },
-    { id: 2 },
-    { id: 3 },
-    { id: 4 },
-    { id: 5 },
-    { id: 6 },
-    { id: 7 },
-    { id: 8 },
-    { id: 9 },
-    { id: 10 }
-  ];
-})
-
 
 
 function getVal()
@@ -120,9 +104,3 @@ function getVal()
 	// document.getElementById("result").innerHTML = text;
 	document.write("\nThe Calorie total is: " + val);
 }
-<<<<<<< HEAD
-
-
-
-=======
->>>>>>> 7f4c8b8b66979d6a29aaa3e0ff0553799207e231
