@@ -1,81 +1,38 @@
-angular.module('ionic-assignment', ['ionic'])
+// app.js file that contains details on declared state
+angular.module('ionic-assignment', ['ionic', 'ionic-assignment.controllers'])
+
+
+.run(function($ionicPlatform) {
+	$ionicPlatform.ready(function() {
+		// Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
+		// for form inputs)
+		if (window.cordova && window.cordova.plugins.Keyboard) {
+      		cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+		}
+		if (window.StatusBar) {
+			StatusBar.styleDefault();
+		}
+	});
+})
+
 
 .config(function($stateProvider, $urlRouterProvider) 
 {
 	// Declaration & Definition of States
 	
-	// Defaults to this State, the 'menuState'
+	// Defaults to this State, 'menuState' should more be added 
 	$urlRouterProvider.otherwise('/listState');
 	
 	$stateProvider
 	
+	/* Creates a Single State that hold the location url, the associated HTML
+	template and it's associated controller bound in with the index.html page */
 	.state('listState', 
 	{
 		url: '/listState',
 		templateUrl: 'listState.html',
 		controller: 'mainController'
 	});
-	
-}) // End of Declaration & Definition of States
-
-
-.controller('mainController', function($scope) 
-{
-    $scope.firstName= "";
-    $scope.lastName= "";
-	$scope.cals = 0;
-	$scope.dayOfWeek = 
-	[
-		{Id: "Mon", Name: "Mon"}, 
-		{Id: "Tue", Name: "Tue"}, 
-		{Id: "Wed", Name: "Wed"}, 
-		{Id: "Thu", Name: "Thu"}, 
-		{Id: "Fri", Name: "Fri"}, 
-		{Id: "Sat", Name: "Sat"}, 
-		{Id: "Sun", Name: "Sun"}, 
-	];
-	
-    $scope.items = 
-	[
-		{ Id: "Male", Name: "Male" },
-		{ Id: "Female", Name: "Female" }
-	];
-		if($scope.items.Id == "Male"){
-			$scope.cals = 3500;
-		}else{
-			$scope.cals = 2500;
-		}
 })
+// End .config(function($stateProvider, $urlRouterProvider) 
 
-.controller("countCtrl", function($scope) 
-{
-	$scope.countCod = 0;
-	$scope.countSalmon = 0;
-	$scope.countPlaice = 0
-	$scope.countSausages = 0;
-	$scope.countSteak = 0;
-	$scope.countLamb = 0;
-	$scope.countApple = 0;
-	$scope.countOrange = 0;
-	$scope.countBanana = 0;
-	$scope.countCarrot = 0;
-	$scope.countParsnip = 0;
-	$scope.countCelery = 0;
-	$scope.countLamb = 0;
-	$scope.countSteak = 0;
-	$scope.countSausages = 0; 
-	$scope.countApple = 0; 
-	$scope.countOrange = 0; 
-	$scope.countBanana = 0; 
-	$scope.countCarrot = 0; 
-	$scope.countParsnip = 0; 
-	$scope.countCelery = 0; 
-	$scope.countChicken = 0; 
-	$scope.countDuck = 0; 
-	$scope.countTurkey = 0; 
-	$scope.countBrownRice = 0; 
-	$scope.countWhiteRice = 0; 
-	$scope.countWhitePasta = 0; 
-	$scope.countBrownPasta = 0; 
-	$scope.countPotatoes = 0; 
-})

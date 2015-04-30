@@ -4,18 +4,17 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
 		<title>Calorie Management App</title>
-
 		<link href="lib/ionic/css/ionic.css" rel="stylesheet">
 		<link href="css/style.css" rel="stylesheet">
-
 		<!-- ionic/angularjs js -->
 		<script src="lib/ionic/js/ionic.bundle.js"></script>
-
 		<!-- cordova script (this will be a 404 during development) -->
 		<script src="cordova.js"></script>
-
+		
 		<!-- your app's js -->
 		<script src="js/app.js"></script>
+		<script src="js/controllers.js"></script>
+		<script src="js/services.js"></script>
 	</head>
 	
 	<body ng-app="ionic-assignment" ng-controller="countCtrl">
@@ -54,6 +53,7 @@
 					</br><hr/></br>
 					<h2>Daily Calories</h2>	
 					<p style="text-align: center">Please Add up your totals</p>
+					
 						<!-- Fish -->
 						<div class="list">
 							<a class="item item-thumbnail-center">
@@ -62,33 +62,39 @@
 							</a>
 						</div>
 						<ul class="list">
-							<li class="item">Cod (Per Piece)
-								<br/>
-								<button class="button button-small button-stable" ng-click="countCod = countCod + 1; countCodCals = countCodCals + 82">+</button>
-								<button class="button button-small button-stable" ng-click="countCod = countCod - 1; countCodCals = countCodCals - 82">-</button>
-								<input id="buttonBorderStyle" type="number" ng-model="countCod" />
-								<label>Calorie Total per Item:	
-									<input placeholder ="0" id="buttonBorderStyle" type="number" ng-model="countCodCals" />
-								</label>
-							<li>
-							<li class="item">Salmon(Per Piece)
-								<br/>
-								<button class="button button-small button-stable" ng-click="countSalmon = countSalmon + 1; countSalmonCals = countSalmonCals + 208">+</button>
-								<button class="button button-small button-stable" ng-click="countSalmon = countSalmon - 1; countSalmonCals = countSalmonCals - 208">-</button>
-								<input id="buttonBorderStyle" type="number" ng-model="countSalmon" />
-								<label>Calorie Total per Item:	
-									<input placeholder ="0" id="buttonBorderStyle" type="number" ng-model="countSalmonCals"/>
-								</label>
-							<li>
-							<li class="item">Plaice (Per Piece)
-								<br/>
-								<button class="button button-small button-stable" ng-click="countPlaice = countPlaice + 1; countPlaiceCals = countPlaiceCals + 149">+</button>
-								<button class="button button-small button-stable" ng-click="countPlaice = countPlaice - 1; countPlaiceCals = countPlaiceCals - 149">-</button>
-								<input id="buttonBorderStyle" type="number" ng-model="countPlaice" />
-								<label>Calorie Total per Item:	
-									<input placeholder ="0" id="buttonBorderStyle" type="number" ng-model="countPlaiceCals"/>
-								</label>
-							<li>
+							<div id="buttonContainer">
+								<li class="item">Cod (Per Piece)
+									<br/>
+									<button class="button button-medium button-stable" ng-click="countCod = countCod + 1; countCodCals = countCodCals + 82">+</button>
+									<button class="button button-medium button-stable" ng-click="countCod = countCod - 1; countCodCals = countCodCals - 82">-</button>
+									<input id="buttonBorderStyle" type="number" ng-model="countCod" />
+									<label>Calorie Total per Item:	
+										<input placeholder ="0" id="buttonBorderStyle" type="number" ng-model="countCodCals" />
+									</label>
+								<li>
+							</div>
+							<div id="buttonContainer">
+								<li class="item">Salmon(Per Piece)
+									<br/>
+									<button class="button button-medium button-stable" ng-click="countSalmon = countSalmon + 1; countSalmonCals = countSalmonCals + 208">+</button>
+									<button class="button button-medium button-stable" ng-click="countSalmon = countSalmon - 1; countSalmonCals = countSalmonCals - 208">-</button>
+									<input id="buttonBorderStyle" type="number" ng-model="countSalmon" />
+									<label>Calorie Total per Item:	
+										<input placeholder ="0" id="buttonBorderStyle" type="number" ng-model="countSalmonCals"/>
+									</label>
+								<li>
+							</div>
+							<div id="buttonContainer">
+								<li class="item">Plaice (Per Piece)
+									<br/>
+									<button class="button button-medium button-stable" ng-click="countPlaice = countPlaice + 1; countPlaiceCals = countPlaiceCals + 149">+</button>
+									<button class="button button-medium button-stable" ng-click="countPlaice = countPlaice - 1; countPlaiceCals = countPlaiceCals - 149">-</button>
+									<input id="buttonBorderStyle" type="number" ng-model="countPlaice" />
+									<label>Calorie Total per Item:	
+										<input placeholder ="0" id="buttonBorderStyle" type="number" ng-model="countPlaiceCals"/>
+									</label>
+								<li>
+							</div>
 						</ul>
 						<!-- End Fish -->
 						
@@ -100,33 +106,50 @@
 							</a>
 						</div>
 						<ul class="list">
-							<li class="item">Lamb (Per Piece)
-								<br/>
-								<button class="button button-small button-stable" ng-click="countLamb = countLamb + 1; countLambCals = countLambCals + 249">+</button>
-								<button class="button button-small button-stable" ng-click="countLamb = countLamb - 1; countLambCals = countLambCals - 249">-</button>
-								<input id="buttonBorderStyle" type="number" ng-model="countLamb" />
-								<label>Calorie Total per Item:	
-									<input placeholder ="0" id="buttonBorderStyle" type="number" ng-model="countLambCals"/>
-								</label>
-							<li>
-							<li class="item">Sirloin Steak(Per Piece)
-								<br/>
-								<button class="button button-small button-stable" ng-click="countSteak = countSteak + 1; countSteakCals = countSteakCals + 277">+</button>
-								<button class="button button-small button-stable" ng-click="countSteak = countSteak - 1; countSteakCals = countSteakCals - 277">-</button>
-								<input id="buttonBorderStyle" type="number" ng-model="countSteak" />
-								<label>Calorie Total per Item:	
-									<input placeholder ="0" id="buttonBorderStyle" type="number" ng-model="countSteakCals"/>
-								</label>
-							<li>
-							<li class="item">Sausages(Single)
-								<br/>
-								<button class="button button-small button-stable" ng-click="countSausages = countSausages + 1; countSausagesCals = countSausagesCals + 301">+</button>
-								<button class="button button-small button-stable" ng-click="countSausages = countSausages - 1; countSausagesCals = countSausagesCals - 301">-</button>
-								<input id="buttonBorderStyle" type="number" ng-model="countSausages" />
-								<label>Calorie Total per Item:	
-									<input placeholder ="0" id="buttonBorderStyle" type="number" ng-model="countSausagesCals"/>
-								</label>
-							<li>
+							<div id="buttonContainer">
+								<li class="item">Lamb (Per Piece)
+									<br/>
+									<button class="button button-medium button-stable" ng-click="countLamb = countLamb + 1; countLambCals = countLambCals + 249">+</button>
+									<button class="button button-medium button-stable" ng-click="countLamb = countLamb - 1; countLambCals = countLambCals - 249">-</button>
+									<input id="buttonBorderStyle" type="number" ng-model="countLamb" />
+									<label>Calorie Total per Item:	
+										<input placeholder ="0" id="buttonBorderStyle" type="number" ng-model="countLambCals"/>
+									</label>
+								<li>
+							</div>
+							<div id="buttonContainer">
+								<li class="item">Sirloin Steak(Per Piece)
+									<br/>
+									<button class="button button-medium button-stable" ng-click="countSteak = countSteak + 1; countSteakCals = countSteakCals + 277">+</button>
+									<button class="button button-medium button-stable" ng-click="countSteak = countSteak - 1; countSteakCals = countSteakCals - 277">-</button>
+									<input id="buttonBorderStyle" type="number" ng-model="countSteak" />
+									<label>Calorie Total per Item:	
+										<input placeholder ="0" id="buttonBorderStyle" type="number" ng-model="countSteakCals"/>
+									</label>
+								<li>
+							</div>
+							<div id="buttonContainer">
+								<li class="item">Sausages(Single)
+									<br/>
+									<button class="button button-medium button-stable" ng-click="countSausages = countSausages + 1; countSausagesCals = countSausagesCals + 301">+</button>
+									<button class="button button-medium button-stable" ng-click="countSausages = countSausages - 1; countSausagesCals = countSausagesCals - 301">-</button>
+									<input id="buttonBorderStyle" type="number" ng-model="countSausages" />
+									<label>Calorie Total per Item:	
+										<input placeholder ="0" id="buttonBorderStyle" type="number" ng-model="countSausagesCals"/>
+									</label>
+								<li>
+							</div>
+							<div id="buttonContainer">
+								<li class="item">Bacon(Per Slice)
+									<br/>
+									<button class="button button-medium button-stable" ng-click="countBacon = countBacon + 1; countBaconCals = countBaconCals + 44">+</button>
+									<button class="button button-medium button-stable" ng-click="countBacon = countBacon - 1; countBaconCals = countBaconCals - 44">-</button>
+									<input id="buttonBorderStyle" type="number" ng-model="countBacon" />
+									<label>Calorie Total per Item:	
+										<input placeholder ="0" id="buttonBorderStyle" type="number" ng-model="countBaconCals"/>
+									</label>
+								<li>
+							</div>
 						</ul>
 						<!-- End Meat -->
 						
@@ -139,33 +162,39 @@
 							</a>
 						</div>
 						<ul class="list">
-							<li class="item">Chicken Breast
-								<br/>
-								<button class="button button-small button-stable" ng-click="countchicken = countchicken + 1; countchickenCals = countchickenCals + 172">+</button>
-								<button class="button button-small button-stable" ng-click="countchicken = countchicken - 1; countchickenCals = countchickenCals - 172">-</button>
-								<input id="buttonBorderStyle" type="number" ng-model="countchicken" />
-								<label>Calorie Total per Item:	
-									<input placeholder ="0" id="buttonBorderStyle" type="number" ng-model="countchickenCals"/>
-								</label>
-							<li>
-							<li class="item">Duck Breast
-								<br/>
-								<button class="button button-small button-stable" ng-click="countDuck = countDuck + 1; countDuckCals = countDuckCals + 102">+</button>
-								<button class="button button-small button-stable" ng-click="countDuck = countDuck - 1; countDuckCals = countDuckCals - 102">-</button>
-								<input id="buttonBorderStyle" type="number" ng-model="countDuck" />
-								<label>Calorie Total per Item:	
-									<input placeholder ="0" id="buttonBorderStyle" type="number" ng-model="countDuckCals"/>
-								</label>
-							<li>
-							<li class="item">Turkey Breast
-								<br/>
-								<button class="button button-small button-stable" ng-click="countTurkey = countTurkey + 1; countTurkeyCals = countTurkeyCals + 189">+</button>
-								<button class="button button-small button-stable" ng-click="countTurkey = countTurkey - 1; countTurkeyCals = countTurkeyCals - 189">-</button>
-								<input id="buttonBorderStyle" type="number" ng-model="countTurkey" />
-								<label>Calorie Total per Item:	
-									<input placeholder ="0" id="buttonBorderStyle" type="number" ng-model="countTurkeyCals"/>
-								</label>
-							<li>
+							<div id="buttonContainer">
+								<li class="item">Chicken Breast
+									<br/>
+									<button class="button button-medium button-stable" ng-click="countchicken = countchicken + 1; countchickenCals = countchickenCals + 172">+</button>
+									<button class="button button-medium button-stable" ng-click="countchicken = countchicken - 1; countchickenCals = countchickenCals - 172">-</button>
+									<input id="buttonBorderStyle" type="number" ng-model="countchicken" />
+									<label>Calorie Total per Item:	
+										<input placeholder ="0" id="buttonBorderStyle" type="number" ng-model="countchickenCals"/>
+									</label>
+								<li>
+							</div>
+							<div id="buttonContainer">
+								<li class="item">Duck Breast
+									<br/>
+									<button class="button button-medium button-stable" ng-click="countDuck = countDuck + 1; countDuckCals = countDuckCals + 102">+</button>
+									<button class="button button-medium button-stable" ng-click="countDuck = countDuck - 1; countDuckCals = countDuckCals - 102">-</button>
+									<input id="buttonBorderStyle" type="number" ng-model="countDuck" />
+									<label>Calorie Total per Item:	
+										<input placeholder ="0" id="buttonBorderStyle" type="number" ng-model="countDuckCals"/>
+									</label>
+								<li>
+							</div>
+							<div id="buttonContainer">
+								<li class="item">Turkey Breast
+									<br/>
+									<button class="button button-medium button-stable" ng-click="countTurkey = countTurkey + 1; countTurkeyCals = countTurkeyCals + 189">+</button>
+									<button class="button button-medium button-stable" ng-click="countTurkey = countTurkey - 1; countTurkeyCals = countTurkeyCals - 189">-</button>
+									<input id="buttonBorderStyle" type="number" ng-model="countTurkey" />
+									<label>Calorie Total per Item:	
+										<input placeholder ="0" id="buttonBorderStyle" type="number" ng-model="countTurkeyCals"/>
+									</label>
+								<li>
+							</div>
 						</ul>
 						<!-- End Poultry -->
 						
@@ -178,60 +207,72 @@
 							</a>
 						</div>
 						<ul class="list">
-							<li class="item">Apple
-								<br/>
-								<button class="button button-small button-stable" ng-click="countApple = countApple + 1; countAppleCals = countAppleCals + 52">+</button>
-								<button class="button button-small button-stable" ng-click="countApple = countApple - 1; countAppleCals = countAppleCals - 52">-</button>
-								<input id="buttonBorderStyle" type="number" ng-model="countApple" />
-								<label>Calorie Total per Item:	
-									<input placeholder ="0" id="buttonBorderStyle" type="number" ng-model="countAppleCals"/>
-								</label>
-							<li>
-							<li class="item">Orange
-								<br/>
-								<button class="button button-small button-stable" ng-click="countOrange = countOrange + 1; countOrangeCals = countOrangeCals + 47">+</button>
-								<button class="button button-small button-stable" ng-click="countOrange = countOrange - 1; countOrangeCals = countOrangeCals - 47">-</button>
-								<input id="buttonBorderStyle" type="number" ng-model="countOrange" />
-								<label>Calorie Total per Item:	
-									<input placeholder ="0" id="buttonBorderStyle" type="number" ng-model="countOrangeCals"/>
-								</label>
-							<li>
-							<li class="item">Banana
-								<br/>
-								<button class="button button-small button-stable" ng-click="countBanana = countBanana + 1; countBananaCals = countBananaCals + 89">+</button>
-								<button class="button button-small button-stable" ng-click="countBanana = countBanana - 1; countBananaCals = countBananaCals - 89">-</button>
-								<input id="buttonBorderStyle" type="number" ng-model="countBanana" />
-								<label>Calorie Total per Item:	
-									<input placeholder ="0" id="buttonBorderStyle" type="number" ng-model="countBananaCals"/>
-								</label>
-							<li>
-							<li class="item">Carrot
-								<br/>
-								<button class="button button-small button-stable" ng-click="countCarrot = countCarrot + 1; countCarrotCals = countCarrotCals + 41">+</button>
-								<button class="button button-small button-stable" ng-click="countCarrot = countCarrot - 1; countCarrotCals = countCarrotCals - 41">-</button>
-								<input id="buttonBorderStyle" type="number" ng-model="countCarrot" />
-								<label>Calorie Total per Item:	
-									<input placeholder ="0" id="buttonBorderStyle" type="number" ng-model="countCarrotCals"/>
-								</label>
-							<li>
-							<li class="item">Parsnip
-								<br/>
-								<button class="button button-small button-stable" ng-click="countParnsip = countParnsip + 1; countParnsipCals = countParnsipCals + 75">+</button>
-								<button class="button button-small button-stable" ng-click="countParnsip = countParnsip - 1; countParnsipCals = countParnsipCals - 75">-</button>
-								<input id="buttonBorderStyle" type="number" ng-model="countParnsip" />
-								<label>Calorie Total per Item:	
-									<input placeholder ="0" id="buttonBorderStyle" type="number" ng-model="countParnsipCals"/>
-								</label>
-							<li>
-							<li class="item">Celery (Stick)
-								<br/>
-								<button class="button button-small button-stable"ng-click="countCelery = countCelery + 1; countCeleryCals = countCeleryCals + 16">+</button>
-								<button class="button button-small button-stable" ng-click="countCelery = countCelery - 1; countCeleryCals = countCeleryCals - 16">-</button>
-								<input id="buttonBorderStyle" type="number" ng-model="countCelery" />
-								<label>Calorie Total per Item:	
-									<input placeholder ="0" id="buttonBorderStyle" type="number" ng-model="countCeleryCals"/>
-								</label>
-							<li>
+							<div id="buttonContainer">
+								<li class="item">Apple
+									<br/>
+									<button class="button button-medium button-stable" ng-click="countApple = countApple + 1; countAppleCals = countAppleCals + 52">+</button>
+									<button class="button button-medium button-stable" ng-click="countApple = countApple - 1; countAppleCals = countAppleCals - 52">-</button>
+									<input id="buttonBorderStyle" type="number" ng-model="countApple" />
+									<label>Calorie Total per Item:	
+										<input placeholder ="0" id="buttonBorderStyle" type="number" ng-model="countAppleCals"/>
+									</label>
+								<li>
+							</div>
+							<div id="buttonContainer">
+								<li class="item">Orange
+									<br/>
+									<button class="button button-medium button-stable" ng-click="countOrange = countOrange + 1; countOrangeCals = countOrangeCals + 47">+</button>
+									<button class="button button-medium button-stable" ng-click="countOrange = countOrange - 1; countOrangeCals = countOrangeCals - 47">-</button>
+									<input id="buttonBorderStyle" type="number" ng-model="countOrange" />
+									<label>Calorie Total per Item:	
+										<input placeholder ="0" id="buttonBorderStyle" type="number" ng-model="countOrangeCals"/>
+									</label>
+								<li>
+							</div>
+							<div id="buttonContainer">
+								<li class="item">Banana
+									<br/>
+									<button class="button button-medium button-stable" ng-click="countBanana = countBanana + 1; countBananaCals = countBananaCals + 89">+</button>
+									<button class="button button-medium button-stable" ng-click="countBanana = countBanana - 1; countBananaCals = countBananaCals - 89">-</button>
+									<input id="buttonBorderStyle" type="number" ng-model="countBanana" />
+									<label>Calorie Total per Item:	
+										<input placeholder ="0" id="buttonBorderStyle" type="number" ng-model="countBananaCals"/>
+									</label>
+								<li>
+							</div>
+							<div id="buttonContainer">
+								<li class="item">Carrot
+									<br/>
+									<button class="button button-medium button-stable" ng-click="countCarrot = countCarrot + 1; countCarrotCals = countCarrotCals + 41">+</button>
+									<button class="button button-medium button-stable" ng-click="countCarrot = countCarrot - 1; countCarrotCals = countCarrotCals - 41">-</button>
+									<input id="buttonBorderStyle" type="number" ng-model="countCarrot" />
+									<label>Calorie Total per Item:	
+										<input placeholder ="0" id="buttonBorderStyle" type="number" ng-model="countCarrotCals"/>
+									</label>
+								<li>
+							</div>
+							<div id="buttonContainer">
+								<li class="item">Parsnip
+									<br/>
+									<button class="button button-medium button-stable" ng-click="countParnsip = countParnsip + 1; countParnsipCals = countParnsipCals + 75">+</button>
+									<button class="button button-medium button-stable" ng-click="countParnsip = countParnsip - 1; countParnsipCals = countParnsipCals - 75">-</button>
+									<input id="buttonBorderStyle" type="number" ng-model="countParnsip" />
+									<label>Calorie Total per Item:	
+										<input placeholder ="0" id="buttonBorderStyle" type="number" ng-model="countParnsipCals"/>
+									</label>
+								<li>
+							</div>
+							<div id="buttonContainer">
+								<li class="item">Celery (Stick)
+									<br/>
+									<button class="button button-medium button-stable"ng-click="countCelery = countCelery + 1; countCeleryCals = countCeleryCals + 16">+</button>
+									<button class="button button-medium button-stable" ng-click="countCelery = countCelery - 1; countCeleryCals = countCeleryCals - 16">-</button>
+									<input id="buttonBorderStyle" type="number" ng-model="countCelery" />
+									<label>Calorie Total per Item:	
+										<input placeholder ="0" id="buttonBorderStyle" type="number" ng-model="countCeleryCals"/>
+									</label>
+								<li>
+							</div>
 						</ul>
 						<!-- End Fruit & Veg -->
 						
@@ -243,51 +284,83 @@
 							</a>
 						</div>
 						<ul class="list">
-							<li class="item">Brown Rice(Per 100g)
-								<br/>
-								<button class="button button-small button-stable" ng-click="countBrownRice = countBrownRice + 1; countBrownRiceCals = countBrownRiceCals + 111">+</button>
-								<button class="button button-small button-stable" ng-click="countBrownRice = countBrownRice - 1; countBrownRiceCals = countBrownRiceCals - 111">-</button>
-								<input id="buttonBorderStyle" type="number" ng-model="countBrownRice" />
-								<label>Calorie Total per Item:	
-									<input placeholder ="0" id="buttonBorderStyle" type="number" ng-model="countBrownRiceCals"/>
-								</label>
-							<li>
-							<li class="item">White Rice(Per 100g)
-								<br/>
-								<button class="button button-small button-stable" ng-click="countWhiteRice = countWhiteRice + 1; countWhiteRiceCals = countWhiteRiceCals + 130">+</button>
-								<button class="button button-small button-stable" ng-click="countWhiteRice = countWhiteRice - 1; countWhiteRiceCals = countWhiteRiceCals - 130">-</button>
-								<input id="buttonBorderStyle" type="number" ng-model="countWhiteRice" />
-								<label>Calorie Total per Item:	
-									<input placeholder ="0" id="buttonBorderStyle" type="number" ng-model="countWhiteRiceCals"/>
-								</label>
-							<li>
-							<li class="item">White Pasta(Per 100g)
-								<br/>
-								<button class="button button-small button-stable" ng-click="countWhitePasta = countWhitePasta + 1; countWhitePastaCals = countWhitePastaCals + 158">+</button>
-								<button class="button button-small button-stable" ng-click="countWhitePasta = countWhitePasta - 1; countWhitePastaCals = countWhitePastaCals - 158">-</button>
-								<input id="buttonBorderStyle" type="number" ng-model="countWhitePasta" />
-								<label>Calorie Total per Item:	
-									<input placeholder ="0" id="buttonBorderStyle" type="number" ng-model="countWhitePastaCals"/>
-								</label>
-							<li>
-							<li class="item">Brown Pasta(Per 100g)
-								<br/>
-								<button class="button button-small button-stable" ng-click="countBrownPasta = countBrownPasta + 1; countBrownPastaCals = countBrownPastaCals + 124">+</button>
-								<button class="button button-small button-stable" ng-click="countBrownPasta = countBrownPasta - 1; countBrownPastaCals = countBrownPastaCals - 124">-</button>
-								<input id="buttonBorderStyle" type="number" ng-model="countBrownPasta" />
-								<label>Calorie Total per Item:	
-									<input placeholder ="0" id="buttonBorderStyle" type="number" ng-model="countBrownPastaCals"/>
-								</label>
-							<li>
-							<li class="item">Potatoes
-								<br/>
-								<button class="button button-small button-stable" ng-click="countPotatoes = countPotatoes + 1; countPotatoesCals = countPotatoesCals + 77">+</button>
-								<button class="button button-small button-stable" ng-click="countPotatoes = countPotatoes - 1; countPotatoesCals = countPotatoesCals - 77">-</button>
-								<input id="buttonBorderStyle" type="number" ng-model="countPotatoes" />
-								<label>Calorie Total per Item:	
-									<input placeholder ="0" id="buttonBorderStyle" type="number" ng-model="countPotatoesCals"/>
-								</label>
-							<li>
+							<div id="buttonContainer">
+								<li class="item">Brown Rice(Per 100g)
+									<br/>
+									<button class="button button-medium button-stable" ng-click="countBrownRice = countBrownRice + 1; countBrownRiceCals = countBrownRiceCals + 111">+</button>
+									<button class="button button-medium button-stable" ng-click="countBrownRice = countBrownRice - 1; countBrownRiceCals = countBrownRiceCals - 111">-</button>
+									<input id="buttonBorderStyle" type="number" ng-model="countBrownRice" />
+									<label>Calorie Total per Item:	
+										<input placeholder ="0" id="buttonBorderStyle" type="number" ng-model="countBrownRiceCals"/>
+									</label>
+								<li>
+							</div>
+							<div id="buttonContainer">
+								<li class="item">White Rice(Per 100g)
+									<br/>
+									<button class="button button-medium button-stable" ng-click="countWhiteRice = countWhiteRice + 1; countWhiteRiceCals = countWhiteRiceCals + 130">+</button>
+									<button class="button button-medium button-stable" ng-click="countWhiteRice = countWhiteRice - 1; countWhiteRiceCals = countWhiteRiceCals - 130">-</button>
+									<input id="buttonBorderStyle" type="number" ng-model="countWhiteRice" />
+									<label>Calorie Total per Item:	
+										<input placeholder ="0" id="buttonBorderStyle" type="number" ng-model="countWhiteRiceCals"/>
+									</label>
+								<li>
+							</div>
+							<div id="buttonContainer">
+								<li class="item">White Pasta(Per 100g)
+									<br/>
+									<button class="button button-medium button-stable" ng-click="countWhitePasta = countWhitePasta + 1; countWhitePastaCals = countWhitePastaCals + 158">+</button>
+									<button class="button button-medium button-stable" ng-click="countWhitePasta = countWhitePasta - 1; countWhitePastaCals = countWhitePastaCals - 158">-</button>
+									<input id="buttonBorderStyle" type="number" ng-model="countWhitePasta" />
+									<label>Calorie Total per Item:	
+										<input placeholder ="0" id="buttonBorderStyle" type="number" ng-model="countWhitePastaCals"/>
+									</label>
+								<li>
+							</div>
+							<div id="buttonContainer">
+								<li class="item">Brown Pasta(Per 100g)
+									<br/>
+									<button class="button button-medium button-stable" ng-click="countBrownPasta = countBrownPasta + 1; countBrownPastaCals = countBrownPastaCals + 124">+</button>
+									<button class="button button-medium button-stable" ng-click="countBrownPasta = countBrownPasta - 1; countBrownPastaCals = countBrownPastaCals - 124">-</button>
+									<input id="buttonBorderStyle" type="number" ng-model="countBrownPasta" />
+									<label>Calorie Total per Item:	
+										<input placeholder ="0" id="buttonBorderStyle" type="number" ng-model="countBrownPastaCals"/>
+									</label>
+								<li>
+							</div>
+							<div id="buttonContainer">
+								<li class="item">Potatoes
+									<br/>
+									<button class="button button-medium button-stable" ng-click="countPotatoes = countPotatoes + 1; countPotatoesCals = countPotatoesCals + 77">+</button>
+									<button class="button button-medium button-stable" ng-click="countPotatoes = countPotatoes - 1; countPotatoesCals = countPotatoesCals - 77">-</button>
+									<input id="buttonBorderStyle" type="number" ng-model="countPotatoes" />
+									<label>Calorie Total per Item:	
+										<input placeholder ="0" id="buttonBorderStyle" type="number" ng-model="countPotatoesCals"/>
+									</label>
+								<li>
+							</div>
+							<div id="buttonContainer">
+								<li class="item">White Bread(Per Slice)
+									<br/>
+									<button class="button button-medium button-stable" ng-click="countWhiteBread = countWhiteBread + 1; countWhiteBreadCals = countWhiteBreadCals + 74">+</button>
+									<button class="button button-medium button-stable" ng-click="countWhiteBread = countWhiteBread - 1; countWhiteBreadCals = countWhiteBreadCals - 74">-</button>
+									<input id="buttonBorderStyle" type="number" ng-model="countWhiteBread" />
+									<label>Calorie Total per Item:	
+										<input placeholder ="0" id="buttonBorderStyle" type="number" ng-model="countWhiteBreadCals"/>
+									</label>
+								<li>
+							</div>
+							<div id="buttonContainer">
+								<li class="item">Brown Bread(Per Slice)
+									<br/>
+									<button class="button button-medium button-stable" ng-click="countBrownBread = countBrownBread + 1; countBrownBreadCals = countBrownBreadCals + 69">+</button>
+									<button class="button button-medium button-stable" ng-click="countBrownBread = countBrownBread - 1; countBrownBreadCals = countBrownBreadCals - 69">-</button>
+									<input id="buttonBorderStyle" type="number" ng-model="countBrownBread" />
+									<label>Calorie Total per Item:	
+										<input placeholder ="0" id="buttonBorderStyle" type="number" ng-model="countBrownBreadCals"/>
+									</label>
+								<li>
+							</div>
 						</ul>
 						<!-- End Potatoes, Rice etc -->
 						
@@ -298,7 +371,7 @@
 							<h4>Gender: {{item}}</h4>
 							<h4>Day of the Week: {{daysOfWeek}}</h4>
 							<h4>Calorie Count: 
-								{{countCodCals + countSalmonCals + countPlaiceCals + countLambCals + countSteakCals + countSausagesCals +     countAppleCals + countOrangeCals + countBananaCals + countCarrotCals + countParnsipCals + countCeleryCals + countchickenCals + countDuckCals + countTurkeyCals + countBrownRiceCals + countWhiteRiceCals + countWhitePastaCals + countBrownPastaCals + countPotatoesCals}}
+								{{countCodCals + countSalmonCals + countPlaiceCals + countLambCals + countSteakCals + countSausagesCals +     countAppleCals + countOrangeCals + countBananaCals + countCarrotCals + countParnsipCals + countCeleryCals + countchickenCals + countDuckCals + countTurkeyCals + countBrownRiceCals + countWhiteRiceCals + countWhitePastaCals + countBrownPastaCals + countPotatoesCals + countWhiteBreadCals + countBrownBreadCals + countBaconCals}}
 							</h4>
 						</div>
 						<!-- End Summary Block -->

@@ -1,5 +1,6 @@
 /* Custom Stylesheet */
 
+/* Styles all h3 & h2 tags */
 h3, h2
 {
 	text-align: center;
@@ -7,33 +8,49 @@ h3, h2
 	font-family: 'Century Gothic';
 }
 
+/* Styles all h4 tags */
 h4
 {
 	font-family: 'Century Gothic'
 }
 
+/* Styles all h1, p, ul & li tags */
 h1, p, ul, li
 {
 	font-family: 'Century Gothic';
 	color: navy;
 }
 
+/* Styles the Header part at the start at the Application */
 #headerBlock
 {
 	background: linear-gradient(lightgrey, white, white); 
 	padding: 10px;
 }
 
+/* Styles the Footer Summary part at the start at the Application */
 #summaryBlock
 {
 	background: linear-gradient(white, white, lightgrey);
 	padding: 10px;
 }
 
+/* Styles the Actual border around each button */
 #buttonBorderStyle
 {
 	border: solid grey 1px;
 	border-radius: 3px;
-	width: 60px;
+	width: 108px;
 	text-align: right;
+	font-weight: 16px;
+}
+	
+/* Styles the Container that holds each Food items, Text and Buttons*/
+#buttonContainer 
+{
+	margin-left: auto;
+    margin-right: auto;
+    width: 385px;
+	border: none;
+	height: 180px;
 }
