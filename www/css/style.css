@@ -1,0 +1,39 @@
+/* Custom Stylesheet */
+
+h3, h2
+{
+	text-align: center;
+	color: navy;
+	font-family: 'Century Gothic';
+}
+
+h4
+{
+	font-family: 'Century Gothic'
+}
+
+h1, p, ul, li
+{
+	font-family: 'Century Gothic';
+	color: navy;
+}
+
+#headerBlock
+{
+	background: linear-gradient(lightgrey, white, white); 
+	padding: 10px;
+}
+
+#summaryBlock
+{
+	background: linear-gradient(white, white, lightgrey);
+	padding: 10px;
+}
+
+#buttonBorderStyle
+{
+	border: solid grey 1px;
+	border-radius: 3px;
+	width: 60px;
+	text-align: right;
+}

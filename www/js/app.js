@@ -5,63 +5,47 @@ angular.module('ionic-assignment', ['ionic'])
 	// Declaration & Definition of States
 	
 	// Defaults to this State, the 'menuState'
-	$urlRouterProvider.otherwise('/menuState');
+	$urlRouterProvider.otherwise('/listState');
 	
 	$stateProvider
-
-	// menuState
-	.state('menuState', 
-	{
-		url: '/menuState',
-		templateUrl: 'menuState.html',
-		controller: 'userDetails'
-	})
-	// End menuState
-
+	
 	.state('listState', 
 	{
 		url: '/listState',
-		// parent: 'menuState',
-		templateUrl: 'listState.html'
-	})
-	
-	.state('summaryState',
-	{
-		url: '/summaryState',
-		// parent: 'menuState',
-		templateUrl: 'summaryState.html'
+		templateUrl: 'listState.html',
+		controller: 'mainController'
 	});
-	
-	// $urlRouterProvider.otherwise('/menuState');
 	
 }) // End of Declaration & Definition of States
 
 
-.controller('userDetails', function($scope) 
+.controller('mainController', function($scope) 
 {
     $scope.firstName= "";
     $scope.lastName= "";
+	$scope.cals = 0;
+	$scope.dayOfWeek = 
+	[
+		{Id: "Mon", Name: "Mon"}, 
+		{Id: "Tue", Name: "Tue"}, 
+		{Id: "Wed", Name: "Wed"}, 
+		{Id: "Thu", Name: "Thu"}, 
+		{Id: "Fri", Name: "Fri"}, 
+		{Id: "Sat", Name: "Sat"}, 
+		{Id: "Sun", Name: "Sun"}, 
+	];
+	
     $scope.items = 
 	[
 		{ Id: "Male", Name: "Male" },
 		{ Id: "Female", Name: "Female" }
 	];
+		if($scope.items.Id == "Male"){
+			$scope.cals = 3500;
+		}else{
+			$scope.cals = 2500;
+		}
 })
-
-// .controller('userDetails', function ($scope) 
-// {
-	// $scope.items = $scope.items
-		// {Name : ""};
-// })
-
-
-.run(['$rootScope', '$state', '$stateParams',
-  function ($rootScope, $state, $stateParams) 
-  {
-	  $rootScope.$state = $state;
-	  $rootScope.$stateParams = $stateParams;
-  }
-])
 
 .controller("countCtrl", function($scope) 
 {
@@ -95,12 +79,3 @@ angular.module('ionic-assignment', ['ionic'])
 	$scope.countBrownPasta = 0; 
 	$scope.countPotatoes = 0; 
 })
-
-
-function getVal()
-{
-	var val, text;
-	val = document.getElementById("num").value;
-	// document.getElementById("result").innerHTML = text;
-	document.write("\nThe Calorie total is: " + val);
-}
